@@ -1,2 +1,2 @@
 something = input("Type whatever you want with spaces\nInput: ")
-print(something.replace(" ", "..."))
+print(f"Calm down: {something.replace(" ", "...")}")
