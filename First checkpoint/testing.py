@@ -32,4 +32,5 @@ while True:
     if determiner2 == "1":
         continue
     else:
-        False
+        print("\nThanks for using")
+        exit()
