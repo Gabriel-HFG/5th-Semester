@@ -1,7 +1,6 @@
 
 def convert(argument):
-    argument = argument .replace(":)", "☺️").replace(":(", "🙁")
-    return argument
+    return argument.replace(":)", "☺️").replace(":(", "🙁")
 
 def main():
     something = convert(input("Type something\nInput: "))
