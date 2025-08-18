@@ -4,8 +4,7 @@ def convert(argument):
     return argument
 
 def main():
-    something = input("Type something\nInput: ")
-    something = convert(something)
+    something = convert(input("Type something\nInput: "))
     print(something)
 
 main()
