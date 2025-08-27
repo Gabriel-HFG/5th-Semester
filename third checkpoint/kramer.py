@@ -1,16 +1,16 @@
+
+
 def main():
     while True:
         something = input("Say hi\nInput: ")
-
         if something.lower() == "hello":
-            print("$100")
-            break
+            print("$0")
 
-        something_test = something.lower().replace("h","")
-        if not something == something_test:
+        if something.startswith("h"):
             print("$20")
 
         else:
-            print("$0")
+            print("$100")
+            break
 
 main()
