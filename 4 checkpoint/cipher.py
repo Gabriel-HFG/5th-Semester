@@ -1,16 +1,9 @@
-testing = input("test")
+input = input("do something: ").lower()
+result = ""
 
-print((ord("z")))
-print(ord("a"))
-print(ord(testing))
-
-z = ord("z")
-print(z)
-a = ord("a")
-print(a)
-print(ord(testing))
-
-result = (ord("z") - (ord(testing) - ord("a")))
-print(result)
-result = chr(result)
+for char in input:
+    if char.isalpha():
+        result += chr(ord("z") - (ord(char) - ord("a")))
+    else:
+        result += char
 print(result)

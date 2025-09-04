@@ -14,4 +14,4 @@ while i < len(message):
         cipher += ch
     i += 1
 
-print("Ciphered message:", cipher)
+print("Ciphered message: ", cipher)
