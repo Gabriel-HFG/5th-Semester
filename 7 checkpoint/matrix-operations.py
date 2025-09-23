@@ -13,7 +13,7 @@ def sum_matrix_col(matrix, col):
     return sum((row[col]) for row in matrix)
 
 def change_value(matrix,row,col,number):
-     matrix[row][col] == number
+     matrix[row][col] = number
      return matrix
 
 def main():
