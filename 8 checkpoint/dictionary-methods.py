@@ -11,3 +11,10 @@ print(dictionary.keys())
 for k in dictionary.keys():
     print(k)
 
+print(dictionary.items())
+for item in dictionary.items():
+    print(item)
+
+for k, v in dictionary.items():
+    print(f"{k} -> {v}")
+
