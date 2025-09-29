@@ -5,7 +5,7 @@ birthdays = {
 }
 
 while True:
-    name = input("type quit to exit.\nDictionary to create a new dictionary\nEnter a name: ").capitalize()
+    name = input("\ntype Quit to exit.\nDictionary to create a new dictionary\nEnter a name: ").capitalize()
     if name == "Quit":
         break
     if name == "Dictionary":
@@ -18,7 +18,7 @@ while True:
             new_birthdays[person] = date
 
         with open("birthdays.txt", "w") as file:
-            for person, date in birthdays.items():
+            for person, date in new_birthdays.items():
                 file.write(f'{person}: {date},\n')
         print("Dictionary saved to birthdays.txt")
 
