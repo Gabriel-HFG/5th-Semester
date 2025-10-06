@@ -1,13 +1,37 @@
 def random_13_letters():
     import random
     letters = []
-    Alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V", "W", "X", "Y", "Z"]
+    Alphabet = ["A","A","A","A","A","A","A","A","A",
+                "B","B",
+                "C","C",
+                "D","D","D","D",
+                "E","E","E","E","E","E","E","E","E","E","E","E",
+                "F","F",
+                "G","G","G",
+                "H","H",
+                "I","I","I","I","I","I","I","I","I",
+                "J",
+                "K",
+                "L","L","L","L",
+                "M","M",
+                "N","N","N","N","N","N",
+                "O","O","O","O","O","O","O","O",
+                "P","P",
+                "Q",
+                "R","R","R","R","R","R",
+                "S","S","S","S",
+                "T","T","T","T","T","T",
+                "U","U","U","U",
+                "V","V",
+                "W","W",
+                "X",
+                "Y","Y",
+                "Z"]
 
     for i in range(0,13):
         i = random.choice(Alphabet)
         letters.append(i)
     return " ".join(letters), letters
-
 
 def scrabble_score(word):
     score_chart = {
@@ -35,9 +59,9 @@ def main():
         random_letters, random_letters_list = random_13_letters()
         print(f"Random 13 letters: {random_letters}")
 
-        user_word = input("Type Exit to end program\nEnter a word to calculate its Scrabble score: ")
+        user_word = input("Type enter to end program\nEnter a word to calculate its Scrabble score: ")
 
-        if user_word.lower().strip() == "exit":
+        if user_word == "":
             break
 
         valid = True

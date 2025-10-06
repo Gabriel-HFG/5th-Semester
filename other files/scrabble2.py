@@ -1,6 +1,31 @@
 def random_13_letters():
     import random
-    alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V", "W", "X", "Y", "Z"]
+    alphabet = ["A","A","A","A","A","A","A","A","A",
+                "B","B",
+                "C","C",
+                "D","D","D","D",
+                "E","E","E","E","E","E","E","E","E","E","E","E",
+                "F","F",
+                "G","G","G",
+                "H","H",
+                "I","I","I","I","I","I","I","I","I",
+                "J",
+                "K",
+                "L","L","L","L",
+                "M","M",
+                "N","N","N","N","N","N",
+                "O","O","O","O","O","O","O","O",
+                "P","P",
+                "Q",
+                "R","R","R","R","R","R",
+                "S","S","S","S",
+                "T","T","T","T","T","T",
+                "U","U","U","U",
+                "V","V",
+                "W","W",
+                "X",
+                "Y","Y",
+                "Z"]
     letters_13 = []
 
     for i in range(0,13):
@@ -26,24 +51,30 @@ def score(word):
                 score += point
     return score
 
+while True: 
+    letters, list_letters = random_13_letters()
+    print(letters)
+    word = input("type your word: ").upper()
+    wrong_characters = []
 
-letters, list_letters = random_13_letters()
-print(letters)
-word = input("type your word: ").upper()
-wrong_characters = []
+    valid = True
+    for i in word:
+        if i in list_letters:
+            list_letters.remove(i)
+        else:
+            wrong_characters.append(i)
+            valid = False
 
+    if not valid:
+        print(f"Invalid input you do not have: {wrong_characters}")
+        continue
 
-valid = False
-for i in word:
-    if i in list_letters:
-        list_letters.remove(i)
-    else:
-        wrong_characters.append(i)
-        valid == True
+    with open("words.txt", "r") as file:
+        words = {word.lower() for word in file.read().splitlines()}
 
-if valid:
-    print(f"Invalid input you do not have: {wrong_characters}")
+    if word.lower() not in words:
+        print("Not a valid word")
+        continue
 
-if not valid:
-    print(score(word))
-
+    if word.lower() in words:
+        print(f"your score is {score(word)}")
