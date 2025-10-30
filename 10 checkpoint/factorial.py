@@ -1,6 +1,10 @@
 def main():
     while True:
-        number = int(input("Enter a non-negative integer: "))
+        number = input("Enter a non-negative integer: ")
+        if not number.isdigit():
+            print("Invalid input. Please enter a non-negative integer.")
+            continue
+        number = int(number)
         if number < 0:
             print("Invalid input. Please enter a non-negative integer.")
             continue
