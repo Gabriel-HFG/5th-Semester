@@ -1,3 +1,7 @@
-import emojize
+import emoji
 
-print(emojize.emojize("Hello, World! :1st_place_medal:"))
+def main():
+    emojii = emoji.emojize(input("write something:"))
+    print(emojii)
+
+main()
