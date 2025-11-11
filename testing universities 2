@@ -96,10 +96,10 @@ def main():
         uni_data = dictionary[name_university]
         writer.writerow([
             name_university,
-            uni_data['Number of Majors'],
-            uni_data['Average semester cost'],
-            uni_data['Closest campus location'],
-            uni_data['Distance_km'],
+            uni_data['majors'],
+            uni_data['average_semester_cost'],
+            uni_data['closest_campus'],
+            uni_data['distance_km'],
             website if website else "No website found"
         ])
 
