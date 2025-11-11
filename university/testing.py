@@ -113,5 +113,4 @@ def main():
                     print(f" - {uni['name']} ({uni['country']})")
                     print(f"   Domain(s): {', '.join(uni['domains'])}")
                     print(f"   Website(s): {', '.join(uni['web_pages'])}\n")
-
 main()

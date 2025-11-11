@@ -66,11 +66,17 @@ def main():
     }
 
 
-    name_university = input("Select a university: ")
+    name_university = input("Write a university: ")
     while name_university not in dictionary:
-        name_university = input("Not a valid university, select a university: ")
+        name_university = input("Not a valid university, select a valid university: ")
     
-    print(dictionary[name_university])
+        if name_university in dictionary:
+                print(f"{name_university} has {dictionary[name_university]['majors']} majors.")
+                print(f"Average semester cost: {dictionary[name_university]['average_semester_cost']}")
+                print(f"Closest campus: {dictionary[name_university]['closest_campus']}")
+                print(f"Distance (km): {dictionary[name_university]['distance_km']}")
+        else:
+                print("University not found.")
 
     data_link = "https://raw.githubusercontent.com/Hipo/university-domains-list/master/world_universities_and_domains.json"
     uni = requests.get(data_link).json()
@@ -79,7 +85,7 @@ def main():
     for i in uni: 
         if name_university in i["name"]:
             website = i["web_pages"]
-            print("Website(s):", website)  # Show the website(s)
+            print("Website(s):", website) 
             break
 
     with open("Universities.csv", "w", newline="") as file:
