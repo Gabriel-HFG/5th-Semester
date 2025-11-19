@@ -68,33 +68,33 @@ universities = {
 data_link = "https://raw.githubusercontent.com/Hipo/university-domains-list/master/world_universities_and_domains.json"
 uni = (requests.get(data_link)).json()
 
-def search_universities_by_name(uni):
+def search_universities_by_name(uni, name):
     results = []
     for unii in uni:
         if name in unii['name'].lower():
             results.append(unii)
-        return results
+    return results
 
 while True:
-        name = str(input("\nEnter a name or 'exit': ").strip().lower())
-        if name == 'exit':
-            break
+    name = str(input("\nEnter a name or 'exit': ").strip().lower())
+    if name == 'exit':
+        break
 
-        results = search_universities_by_name(uni)
+    results = search_universities_by_name(uni, name)
 
-        if not results:
-            print("No universities found.")
-        else:
-            print(f"\nFound {len(results)} matches:\n")
-            for uni in results[:10]:  # show first 10 results
-                print(f" - {uni['name']} ({uni['country']})")
-                print(f"   Domain(s): {', '.join(uni['domains'])}")
-                print(f"   Website(s): {', '.join(uni['web_pages'])}\n")
+    if not results:
+        print("No universities found.")
+    else:
+        print(f"\nFound {len(results)} matches:\n")
+        for university in results[:10]:  # show first 10 results
+            print(f" - {university['name']} ({university['country']})")
+            print(f"   Domain(s): {', '.join(university['domains'])}")
+            print(f"   Website(s): {', '.join(university['web_pages'])}\n")
 
-univercity = input("Type a university name: ")
+univercity = input("\nType a university name: ").strip().lower()
 
 if univercity in universities:
-    print(f"{univercity} has {universities[univercity]['majors']} majors.")
+    print(f"\n{univercity} has {universities[univercity]['majors']} majors.")
     print(f"Average semester cost: {universities[univercity]['average_semester_cost']}")
     print(f"Closest campus: {universities[univercity]['closest_campus']}")
     print(f"Distance (km): {universities[univercity]['distance_km']}")
